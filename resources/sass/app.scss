@@ -7,8 +7,42 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+// @import 'card';
+
+$link:#505050;
+$link2:#505050;
+
 
 .navbar-laravel {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: $primary;
+    color: white;
+    box-shadow: 1px 1px 2px #555;
+
+    .navbar-brand {
+        color: #444;
+        text-shadow: 1px 1px 3px white;
+    }
+
+    .navbar-toggler-icon {
+        color: white;
+    }
+
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: lighten($color: $link, $amount: 50);
+
+                &:hover {
+                    color: $link;
+                }
+            }
+        }
+    }
+
+
+}
+
+.card-image {
+    max-height: 180px;
+    overflow: hidden;
 }

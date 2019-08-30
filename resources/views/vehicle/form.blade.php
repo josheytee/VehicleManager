@@ -17,9 +17,9 @@
                             <label for="owner" class="col-md-4 col-form-label text-md-right">{{ __('Owner') }}</label>
 
                             <div class="col-md-6">
-                                <select id="owner" class="form-control{{ $errors->has('owner') ? ' is-invalid' : '' }}" name="owner_id">
+                                <select id="owner" class="js-example-templating form-control{{ $errors->has('owner') ? ' is-invalid' : '' }}" name="owner_id">
 
-                                    <option value=" ">--select user-- </option>
+                                    <option></option>
                                     @foreach($owners as $owner)
                                     <option value="{{$owner->id}}" {{isset($vehicle->id) &&$vehicle->owner->id == $owner->id?"selected":""}}>
                                         {{$owner->name}}
@@ -162,7 +162,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Save') }}
                                 </button>
                             </div>
                         </div>
@@ -173,3 +173,30 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/select2-bootstrap4.min.css')}}">
+@endpush
+@push('scripts')
+<script src="{{asset('js/select2.min.js')}}"></script>
+<script>
+    function formatState(state) {
+        if (!state.id) {
+            return state.text;
+        }
+        var baseUrl = "/user/pages/images/flags";
+        var $state = $(
+            '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
+        );
+        return $state;
+    };
+
+    $(".js-example-templating").select2({
+        // templateResult: formatState
+        placeholder: "Select Owner",
+        allowClear: true,
+        theme: 'bootstrap4'
+    });
+</script>
+@endpush

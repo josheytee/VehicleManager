@@ -1,5 +1,7 @@
 <div class="card card-default">
-    <img src="{{$vehicle->image}}" class="card-img-top" />
+    <div class="card-image">
+        <img src="{{$vehicle->image}}" class="card-img-top" />
+    </div>
 
     <div class="card-body">
         <h5 class="card-title">

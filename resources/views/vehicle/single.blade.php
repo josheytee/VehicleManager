@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title',$vehicle->name)
 
 @section('content')
 <div class="container">
@@ -7,7 +8,6 @@
             <div class="card">
                 <div class="card-header">{{ __('Vehicle Details')}}
                     <a href="{{route('vehicle.destroy',$vehicle->id)}}" class="btn btn-primary float-right">
-
                         <span class="fa fa-trash" aria-hidden="true"></span>
                     </a>
                     <a href="{{route('vehicle.edit',$vehicle->id)}}" class="btn btn-primary mr-2 float-right">

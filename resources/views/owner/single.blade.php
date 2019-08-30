@@ -51,7 +51,9 @@
         <div class="row">
             @foreach($owner->vehicles as $vehicle)
             <div class="col-md-4">
-                <vehicle-result :result="{{$vehicle}}" route="{{route('vehicle.show',$vehicle)}}"></vehicle-result>
+                @include('vehicle.result', ['owner'=>$vehicle])
+
+                <!-- <vehicle-result :result="{{$vehicle}}" route="{{route('vehicle.show',$vehicle)}}"></vehicle-result> -->
             </div>
             @endforeach
         </div>

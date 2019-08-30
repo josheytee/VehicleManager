@@ -13522,8 +13522,31 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #3490dc;
+  color: white;
+  -webkit-box-shadow: 1px 1px 2px #555;
+          box-shadow: 1px 1px 2px #555;
+}
+
+.navbar-laravel .navbar-brand {
+  color: #444;
+  text-shadow: 1px 1px 3px white;
+}
+
+.navbar-laravel .navbar-toggler-icon {
+  color: white;
+}
+
+.navbar-laravel .navbar-nav .nav-item .nav-link {
+  color: #d0cfcf;
+}
+
+.navbar-laravel .navbar-nav .nav-item .nav-link:hover {
+  color: #505050;
+}
+
+.card-image {
+  max-height: 180px;
+  overflow: hidden;
 }
 
