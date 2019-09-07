@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/license/{vehicle}', "VehicleController@license")->name('download.license');
+
 Route::get('/about', function () {
     return view('about');
 });

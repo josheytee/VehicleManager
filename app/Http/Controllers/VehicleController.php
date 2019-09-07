@@ -71,6 +71,11 @@ class VehicleController extends Controller
         return view('vehicle.single', compact('vehicle'));
     }
 
+    public function license(Vehicle $vehicle)
+    {
+        return $vehicle->downloadLicense();
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

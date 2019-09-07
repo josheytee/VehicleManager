@@ -41,7 +41,27 @@
                         <tr>
                             <th>license:</th>
                             <td>
-                                <img src="{{$vehicle->driving}}" style="width:100%" alt="">
+                                <!-- Button to Open the Modal -->
+                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <img src="{{$vehicle->driving}}" style="width:50%" alt="">
+                                </a>
+                                <!-- The Modal -->
+                                <div class="modal" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <img src="{{$vehicle->driving}}" style="width:150%" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="{{route('download.license',$vehicle)}}">
+                                        download
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-square fa-stack-2x primary"></i>
+                                            <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                     </table>

@@ -25,6 +25,10 @@ class Vehicle extends Model
     {
         return $value ? Storage::url($value) : asset('img/car.jpg');
     }
+    public function downloadLicense()
+    {
+        return Storage::download($this->attributes['driving']);
+    }
     public function getImageAttribute($value)
     {
         return $value ? Storage::url($value) : asset('img/car.jpg');
